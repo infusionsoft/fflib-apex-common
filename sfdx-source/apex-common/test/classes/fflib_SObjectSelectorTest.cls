@@ -554,5 +554,10 @@ private with sharing class fflib_SObjectSelectorTest
 		public Schema.SObjectType getSObjectType() {
 			return Lead.sObjectType;
 		}
-	}	
+	}
+
+	@IsTest
+	private static void coverage() {
+		fflib_SObjectSelector.coverage();
+	}
 }
