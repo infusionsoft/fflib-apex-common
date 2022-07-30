@@ -1,0 +1,16 @@
+{
+    "packages": [
+        {
+            "name": "apex-common",
+            "version": "1.0.0.12",
+            "elapsed_time": 176031,
+            "status": "succeeded"
+        }
+    ],
+    "summary": {
+        "scheduled_packages": 1,
+        "elapsed_time": 181498,
+        "succeeded": 1,
+        "failed": 0
+    }
+}

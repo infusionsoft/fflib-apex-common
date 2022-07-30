@@ -1,0 +1,13 @@
+Source converted successfully to E:\dev\github\keap\fflib-apex-common\.sfpowerscripts\j6pCJ_source\.sfpowerscripts\LXKpI_mdapi
+command: create  package
+package name: apex-common
+package type: unlocked
+package directory: sfdx-source/apex-common
+-------------------------------------------------------------------------------------------
+Fetching Package Type Info from DevHub
+Package  apex-common
+IsOrgDependent No
+Package Id  0Ho3a000000k9bcCAA
+-------------------------
+Fetching Version Number and Coverage details
+Successfully Retrieved the Apex Test Coverage of the package version

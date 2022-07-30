@@ -1,0 +1,10 @@
+{"metric":"sfpowerscripts.build.scheduled","type":"count","timestamp":1659191126695,"tags":{"is_diffcheck_enabled":"false","stage":"build","branch":"master"}}
+{"metric":"sfpowerscripts.build.scheduled.packages","type":"count","timestamp":1659191126899,"tags":{"package":"apex-common","type":"unlocked","is_diffcheck_enabled":"false","is_dependency_validated":"true","pr_mode":"false"}}
+{"metric":"sfpowerscripts.package.testcoverage","type":"guage","value":88,"timestamp":1659191307566,"tags":{"package":"apex-common","from":"createpackage"}}
+{"metric":"sfpowerscripts.package.metadatacount","type":"guage","value":33,"timestamp":1659191307567,"tags":{"package":"apex-common","type":"unlocked"}}
+{"metric":"sfpowerscripts.package.created","type":"count","timestamp":1659191307567,"tags":{"package":"apex-common","type":"unlocked","is_dependency_validated":"true"}}
+{"metric":"sfpowerscripts.package.elapsed.time","type":"timers","value":176031,"timestamp":1659191307568,"tags":{"package":"apex-common","type":"unlocked","is_dependency_validated":"true"}}
+{"metric":"sfpowerscripts.package.creation.elapsed_time","type":"timers","value":176031,"timestamp":1659191307568,"tags":{"package":"apex-common","type":"unlocked","is_dependency_validated":"true"}}
+{"metric":"sfpowerscripts.build.succeeded.packages","type":"count","timestamp":1659191307570,"tags":{"package":"apex-common","type":"unlocked","is_diffcheck_enabled":"false","is_dependency_validated":"true","pr_mode":"false"}}
+{"metric":"sfpowerscripts.build.duration","type":"guage","value":181498,"timestamp":1659191308193,"tags":{"is_diffcheck_enabled":"false","stage":"build","branch":"master"}}
+{"metric":"sfpowerscripts.build.succeeded","type":"count","timestamp":1659191308193,"tags":{"is_diffcheck_enabled":"false","stage":"build","branch":"master"}}

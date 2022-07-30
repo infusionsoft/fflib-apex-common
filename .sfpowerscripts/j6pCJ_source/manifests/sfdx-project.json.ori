@@ -1,0 +1,21 @@
+{
+    "packageDirectories": [
+        {
+            "path": "sfdx-source/apex-common",
+            "package": "apex-common",
+            "versionNumber": "1.0.0.NEXT",
+            "default": true,
+            "definitionFile": "config/project-scratch-def.json",
+            "dependencies": [
+                { "package": "apex-mock" }
+            ]
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "55.0",
+    "packageAliases": {
+        "apex-common": "0Ho3a000000k9bcCAA",
+        "apex-mock": "04t3a000000PmZAAA0"
+    }
+}
