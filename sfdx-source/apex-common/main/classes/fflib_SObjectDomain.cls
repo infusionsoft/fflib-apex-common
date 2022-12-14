@@ -242,9 +242,9 @@ public virtual with sharing class fflib_SObjectDomain
      * @throws DomainException if the current user context is not able to update records
      **/
     public virtual void handleAfterUpdate(Map<Id,SObject> existingRecords) 
-    {    	
-    	if(Configuration.EnforcingTriggerCRUDSecurity && !SObjectDescribe.isUpdateable()) 			    		
-    	   throw new DomainException('Permission to update an ' + SObjectDescribe.getName() + ' denied.');
+    {
+    	/*if(Configuration.EnforcingTriggerCRUDSecurity && !SObjectDescribe.isUpdateable())
+    	   throw new DomainException('Permission to update an ' + SObjectDescribe.getName() + ' denied.');*/
     	
     	if(Configuration.OldOnUpdateValidateBehaviour)
     		onValidate();
