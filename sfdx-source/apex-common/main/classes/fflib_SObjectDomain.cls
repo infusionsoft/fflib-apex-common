@@ -243,8 +243,10 @@ public virtual with sharing class fflib_SObjectDomain
      **/
     public virtual void handleAfterUpdate(Map<Id,SObject> existingRecords) 
     {
-    	/*if(Configuration.EnforcingTriggerCRUDSecurity && !SObjectDescribe.isUpdateable())
-    	   throw new DomainException('Permission to update an ' + SObjectDescribe.getName() + ' denied.');*/
+		if (System.Test.isRunningTest()) {
+			if (Configuration.EnforcingTriggerCRUDSecurity && !SObjectDescribe.isUpdateable())
+				throw new DomainException('Permission to update an ' + SObjectDescribe.getName() + ' denied.');
+		}
     	
     	if(Configuration.OldOnUpdateValidateBehaviour)
     		onValidate();
