@@ -5,6 +5,7 @@
         "cci:loadData": "cci task run load_sample_data --dataset dev",
         "cci:createScratch": "cci flow run dev_org --org dev",
         "cci:deleteScratch": "cci org scratch_delete dev",
+        "cci:deployDependencies": "cci flow run dependencies --org dev",
         "cci:listOrgs": "cci org list",
         "cci:setDefaultScratch": "cci org default dev",
         "cci:openScratch": "cci org browser dev",
