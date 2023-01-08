@@ -19,5 +19,9 @@
       "sessionSettings": {
         "forceRelogin": false
       }
-    }  }
+    },
+    "currencySettings": {
+      "enableMultiCurrency": true
+    }
+  }
 }
