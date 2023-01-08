@@ -1,6 +1,9 @@
 {
   "orgName": "apex-common - Feature Test Org",
   "edition": "Developer",
+  "features": [
+    "MultiCurrency"
+  ],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
@@ -19,6 +22,9 @@
     },
     "languageSettings": {
       "enableTranslationWorkbench": true
+    },
+    "currencySettings": {
+      "enableMultiCurrency": true
     }
   }
 }

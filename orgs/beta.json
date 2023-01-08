@@ -1,6 +1,9 @@
 {
   "orgName": "apex-common - Beta Test Org",
   "edition": "Developer",
+  "features": [
+    "MultiCurrency"
+  ],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
@@ -16,5 +19,9 @@
       "sessionSettings": {
         "forceRelogin": false
       }
-    }  }
+    },
+    "currencySettings": {
+      "enableMultiCurrency": true
+    }
+  }
 }
