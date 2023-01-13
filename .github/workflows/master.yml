@@ -1,8 +1,8 @@
 name: Package Build
 on:
   push:
-  branches:
-    - master
+    branches:
+      - master
 env:
   CUMULUSCI_KEYCHAIN_CLASS: cumulusci.core.keychain.EnvironmentProjectKeychain
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
