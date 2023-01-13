@@ -8,7 +8,7 @@ env:
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
 jobs:
   package:
-    name: "Package and Promote"
+    name: "Package"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

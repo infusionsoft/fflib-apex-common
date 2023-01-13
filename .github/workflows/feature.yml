@@ -8,7 +8,7 @@ env:
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
 jobs:
   validate:
-    name: "Validate Feature"
+    name: "Validate"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
