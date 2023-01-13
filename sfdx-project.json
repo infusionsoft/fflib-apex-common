@@ -3,7 +3,7 @@
         {
             "path": "force-app",
             "package": "apex-common",
-            "versionNumber": "2022.12.19.NEXT",
+            "versionNumber": "0.0.0.NEXT",
             "default": true,
             "definitionFile": "config/project-scratch-def.json",
             "dependencies": [
