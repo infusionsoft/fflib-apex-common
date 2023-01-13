@@ -7,7 +7,7 @@ env:
   CUMULUSCI_KEYCHAIN_CLASS: cumulusci.core.keychain.EnvironmentProjectKeychain
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
 jobs:
-  package_and_promote:
+  package:
     name: "Package and Promote"
     runs-on: ubuntu-latest
     steps:
