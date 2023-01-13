@@ -7,8 +7,8 @@ env:
   CUMULUSCI_KEYCHAIN_CLASS: cumulusci.core.keychain.EnvironmentProjectKeychain
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
 jobs:
-  beta_test:
-    name: "Create Package"
+  package_and_promote:
+    name: "Package and Promote"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -29,16 +29,31 @@ jobs:
         run: |
           python -m pip install -U pip
           pip install cumulusci
-      - name: Create Scratch Org and Run Unit Tests
+      - name: Create Scratch Org
         run: |
-          cci flow run ci_release --org release
-      - name: Create Package Version
+          cci flow run qa_org --org beta
+      - name: Run Unit Tests
         run: |
-          cci flow run release_production --org release
-      - name: Back Merge
+          cci task run run_tests --org beta
+      -name: Run Robot Tests
         run: |
-          cci task run github_automerge_main
-      - name: Delete Scratch Orgs
+          cci task run robot --org beta -o vars BROWSER:headlesschrome
+      - name: Store Robot Results
+        uses: actions/upload-artifact@v1
+        with:
+          name: robot
+          path: robot/fflib-apex-common/results
+      - name: Delete Scratch Org
         if: ${{ always() }}
         run: |
-          cci org scratch_delete release
+          cci org scratch_delete beta
+      - name: Create Package
+        run: |
+          cci task run create_package_version --package_type Unlocked
+      - name: Release Package
+        run: |
+          cci task run promote_package_version
+      - name: Tag Release
+        run: |
+          cci run task github_release
+          cci run task github_release_notes
