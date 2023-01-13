@@ -9,41 +9,41 @@ env:
 jobs:
   feature_test:
     name: "Validate"
-      runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - uses: actions/setup-node@v3
-          with:
-            node-version: 16
-        - name: Write the token into a file
-          run: 'echo ${{secrets.DEVHUB_TOKEN}} > token.txt'
-        - name: Install sfdx
-          run: "npm install sfdx-cli --global"
-        - name: Auth with the DevHub
-          run: 'sfdx force:auth:sfdxurl:store -f token.txt -a DevHub -d'
-        - name: Set up Python
-          uses: actions/setup-python@v1
-          with:
-            python-version: "3.8"
-        - name: Install CumulusCI
-          run: |
-            python -m pip install -U pip
-            pip install cumulusci
-        - name: Create Scratch Org
-          run: |
-            cci flow run qa_org --org qa
-        - name: Run Unit Tests
-          run: |
-            cci task run run_tests --org qa
-        -name: Run Robot Tests
-          run: |
-            cci task run robot --org qa -o vars BROWSER:headlesschrome
-        - name: Store Robot Results
-          uses: actions/upload-artifact@v1
-          with:
-            name: robot
-            path: robot/fflib-apex-common/results
-        - name: Delete Scratch Org
-          if: ${{ always() }}
-          run: |
-            cci org scratch_delete qa
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - name: Write the token into a file
+        run: 'echo ${{secrets.DEVHUB_TOKEN}} > token.txt'
+      - name: Install sfdx
+        run: "npm install sfdx-cli --global"
+      - name: Auth with the DevHub
+        run: 'sfdx force:auth:sfdxurl:store -f token.txt -a DevHub -d'
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: "3.8"
+      - name: Install CumulusCI
+        run: |
+          python -m pip install -U pip
+          pip install cumulusci
+      - name: Create Scratch Org
+        run: |
+          cci flow run qa_org --org qa
+      - name: Run Unit Tests
+        run: |
+          cci task run run_tests --org qa
+      -name: Run Robot Tests
+        run: |
+          cci task run robot --org qa -o vars BROWSER:headlesschrome
+      - name: Store Robot Results
+        uses: actions/upload-artifact@v1
+        with:
+          name: robot
+          path: robot/fflib-apex-common/results
+      - name: Delete Scratch Org
+        if: ${{ always() }}
+        run: |
+          cci org scratch_delete qa
