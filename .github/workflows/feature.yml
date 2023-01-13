@@ -3,11 +3,9 @@ on:
   push:
     branches:
       - feature/**
-
 env:
   CUMULUSCI_KEYCHAIN_CLASS: cumulusci.core.keychain.EnvironmentProjectKeychain
   CUMULUSCI_SERVICE_github: ${{ secrets.CUMULUSCI_SERVICE_github }}
-
 jobs:
   feature_test:
     name: "Validate"
