@@ -111,6 +111,6 @@ private with sharing class fflib_StringBuilderTest
 		system.assert(fieldSet.contains('AnnualRevenue'));
 		if(UserInfo.isMultiCurrencyOrganization())
 			system.assert(fieldSet.contains('CurrencyIsoCode'));
-        System.debut('Build');
+        System.debug('Build');
 	}
 }
