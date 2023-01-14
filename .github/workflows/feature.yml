@@ -35,6 +35,15 @@ jobs:
       - name: Run Unit Tests
         run: |
           cci task run run_tests --org dev
+      - name: Run Unit and Robot Tests
+        run: |
+          cci task run run_tests --org qa
+          cci task run robot --org qa -o vars BROWSER:headlesschrome
+      - name: Store robot results
+        uses: actions/upload-artifact@v1
+        with:
+          name: robot
+          path: robot/fflib-apex-common/results
       - name: Delete Scratch Org
         if: ${{ always() }}
         run: |
