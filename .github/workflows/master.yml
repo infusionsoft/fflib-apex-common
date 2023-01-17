@@ -34,8 +34,8 @@ jobs:
           cci flow run ci_master --org release
       - name: Create Package Version
         run: |
-          cci flow run build_unlocked_test_package
-      - name: Release Beta
+          cci flow run build_unlocked_test_package --org release
+      - name: Back Merge
         run: |
           cci task run github_automerge_main
       - name: Delete Scratch Orgs
