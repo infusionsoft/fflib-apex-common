@@ -46,7 +46,7 @@ jobs:
           cci flow run release_unlocked_beta --org beta
       - name: Promote Package Version
         run: |
-          cci flow run release_unlocked_production
+          cci flow run release_unlocked_production --org release
       - name: Delete Scratch Orgs
         if: ${{ always() }}
         run: |
