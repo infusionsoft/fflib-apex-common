@@ -35,9 +35,9 @@ jobs:
       - name: Create Package Version
         run: |
           cci flow run build_unlocked_test_package --org release
-      - name: Back Merge
+      - name: Release Beta
         run: |
-          cci task run github_automerge_main
+          cci flow run release_unlocked_production --org release
       - name: Delete Scratch Orgs
         if: ${{ always() }}
         run: |
