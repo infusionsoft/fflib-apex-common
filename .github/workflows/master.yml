@@ -43,7 +43,11 @@ jobs:
           path: robot/fflib-apex-common/results
       - name: Create Package Version
         run: |
-          cci flow run release_unlocked_beta --org qa
+          cci task create_package_version --package_type Unlocked
+          cci task promote_package_version
+          cci task github_release
+          cci task github_release_notes
+          cci task github_automerge_main
       - name: Delete Scratch Orgs
         if: ${{ always() }}
         run: |
