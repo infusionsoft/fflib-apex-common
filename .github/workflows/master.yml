@@ -31,11 +31,11 @@ jobs:
           pip install cumulusci
       - name: Create Scratch Org
         run: |
-          cci flow run qa_org --org beta
+          cci flow run qa_org --org qa
       - name: Run Unit and Robot Tests
         run: |
-          cci task run run_tests --org beta
-          cci task run robot --org beta -o vars BROWSER:headlesschrome
+          cci task run run_tests --org qa
+          cci task run robot --org qa -o vars BROWSER:headlesschrome
       - name: Store robot results
         uses: actions/upload-artifact@v1
         with:
@@ -43,11 +43,7 @@ jobs:
           path: robot/fflib-apex-common/results
       - name: Create Package Version
         run: |
-          cci task run create_package_version --package_type Unlocked --org beta
-          cci task run promote_package_version
-          cci task run github_release
-          cci task run github_release_notes
-          cci task run github_automerge_main
+          cci flow run release_unlocked_beta
       - name: Delete Scratch Orgs
         if: ${{ always() }}
         run: |
