@@ -31,7 +31,7 @@ jobs:
           pip install cumulusci
       - name: Create Scratch Org and Run Unit Tests
         run: |
-          cci flow run ci_release --org release
+          cci flow run ci_master --org release
       - name: Create Package Version
         run: |
           cci flow run build_unlocked_test_package
