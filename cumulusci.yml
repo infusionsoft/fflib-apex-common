@@ -3,10 +3,14 @@ project:
     name: fflib-apex-common
     package:
         name: apex-common
-        api_version: '55.0'
+        api_version: '57.0'
     dependencies:
         - github: 'https://github.com/infusionsoft/fflib-apex-mocks'
     git:
+      default_branch: master
+      prefix_feature: feature/
+      prefix_beta: beta/
+      prefix_release: release/
     test:
         name_match: '%Test'
     source_format: sfdx
@@ -16,7 +20,15 @@ orgs:
     dev:
       config_file: orgs/dev.json
       days: 30
-      namespaced: False
+      namespaced: false
+    feature:
+      config_file: orgs/feature.json
+      days: 1
+      namespaced: false
+    release:
+      config_file: orgs/release.json
+      days: 1
+      namespaced: false
 
 tasks:
     robot:
