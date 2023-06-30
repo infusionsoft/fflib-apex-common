@@ -1,9 +1,6 @@
 {
   "orgName": "apex-common - Dev Org",
   "edition": "Developer",
-  "features": [
-    "MultiCurrency"
-  ],
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
